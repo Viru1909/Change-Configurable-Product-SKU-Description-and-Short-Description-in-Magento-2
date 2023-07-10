@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <vct_changeskudynamically>
+            <sku>
+                <selector>.product.attribute.sku .value</selector>
+            </sku>
+            <short_description>
+                <selector>.product.attribute.overview .value p</selector>
+            </short_description>
+            <description>
+                <selector>.product.attribute.description .value p</selector>
+            </description>
+        </vct_changeskudynamically>
+    </default>
+</config>

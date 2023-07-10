@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="vct" class="vct-tab">
+            <label>VCT</label>
+        </tab>
+        <section id="vct_changeskudynamically" showInDefault="1" showInStore="1" showInWebsite="1">
+            <tab>vct</tab>
+            <label>Change SKU Dynamically</label>
+            <resource>Vct_ChangeSkuDynamically::config</resource>
+            <group id="sku" showInDefault="1" showInStore="1" showInWebsite="1" translate="label">
+                <label>SKU Switching</label>
+                <attribute type="expanded">1</attribute>
+
+                <field id="enable" type="select" canRestore="1" showInDefault="1" showInStore="1" showInWebsite="1" translate="label comment">
+                    <label>Enable</label>
+                    
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="selector" type="text" canRestore="1" showInDefault="1" showInStore="1" showInWebsite="1" translate="label comment">
+                    <label>SKU Selector</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    
+                    <validate>validation-selector</validate>
+                </field>
+            </group>
+            <group id="short_description" showInDefault="1" showInStore="1" showInWebsite="1" translate="label">
+                <label>Short Description Switching</label>
+                <attribute type="expanded">1</attribute>
+                <field id="selector" type="text" canRestore="1" showInDefault="1" showInStore="1" showInWebsite="1" translate="label comment">
+                    <label>Short Description Selector</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    
+                    <validate>validation-selector</validate>
+                </field>
+            </group>
+            <group id="description" showInDefault="1" showInStore="1" showInWebsite="1" translate="label">
+                <label> Description Switching</label>
+                <attribute type="expanded">1</attribute>
+                <field id="selector" type="text" canRestore="1" showInDefault="1" showInStore="1" showInWebsite="1" translate="label comment">
+                    <label> Description Selector</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    
+                    <validate>validation-selector</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
